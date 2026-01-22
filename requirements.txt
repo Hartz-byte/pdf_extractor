@@ -1,0 +1,7 @@
+paddlepaddle==2.6.2
+paddleocr>=2.7.0
+pdf2image
+opencv-python
+numpy
+scikit-image
+shapely
