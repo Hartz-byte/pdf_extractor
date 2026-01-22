@@ -1,7 +1,7 @@
 paddlepaddle==2.6.2
-paddleocr>=2.7.0
+paddleocr==2.7.3
 pdf2image
 opencv-python
-numpy
+numpy<2.0.0
 scikit-image
 shapely

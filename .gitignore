@@ -1,1 +1,5 @@
-/venv
+venv
+/poppler
+/.paddleocr
+/__pycache__
+/.cache

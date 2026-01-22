@@ -1,0 +1,1659 @@
+import mongoose from "mongoose";
+
+const propertyTypeSchema = new mongoose.Schema({
+        isDetachedHouse: {
+            type: Boolean,
+            default: null
+        },
+        isSemiDetachedHouse: {
+            type: Boolean,
+            default: null
+        },
+        isTerracedHouse: {
+            type: Boolean,
+            default: null
+        },
+        isBungalow: {
+            type: Boolean,
+            default: null
+        },
+        isFlat: {
+            type: Boolean,
+            default: null
+        },
+        isMaisonette: {
+            type: Boolean,
+            default: null
+        },
+        flatMaisonetteFloor: {
+            type: Number,
+            default: null
+        },
+        numberOfFloorsInBlock: {
+            type: Number,
+            default: null
+        },
+        isBuiltOrOwnedByLocalAuthority: {
+            type: Boolean,
+            default: null
+        },
+        ownerOccupationPercentage: {
+            type: Number,
+            default: null
+        },
+        isFlatMaisonetteConverted: {
+            type: Boolean,
+            default: null
+        },
+        conversionYear: {
+            type: Number,
+            default: null
+        },
+        isPurposeBuilt: {
+            type: Boolean,
+            default: null
+        },
+        numberOfUnitsInBlock: {
+            type: Number,
+            default: null
+        },
+        isAboveCommercial: {
+            type: Boolean,
+            default: null
+        },
+        residentialNatureImpact: {
+            type: String,
+            default: null
+        },
+        tenure: {
+            type: String,
+            default: null
+        },
+        isFlyingFreehold: {
+            type: Boolean,
+            default: null
+        },
+        flyingFreeholdPercentage: {
+            type: Number,
+            default: null
+        },
+        maintenanceCharge: {
+            type: Number,
+            default: null
+        },
+        roadCharges: {
+            type: Number,
+            default: null
+        },
+        groundRent: {
+            type: Number,
+            default: null
+        },
+        remainingLeaseTermYears: {
+            type: Number,
+            default: null
+        },
+        isPartCommercialUse: {
+            type: Boolean,
+            default: null
+        },
+        commercialUsePercentage: {
+            type: Number,
+            default: null
+        },
+        isPurchasedUnderSharedOwnership: {
+            type: Boolean,
+            default: null
+        },
+        yearBuilt: {
+            type: Number,
+            default: null
+        }
+    });
+    const accommodationSchema = new mongoose.Schema({
+        hall: {
+            type: Number,
+            default: null
+        },
+        livingRooms: {
+            type: Number,
+            default: null
+        },
+        kitchen: {
+            type: Number,
+            default: null
+        },
+        isLiftPresent: {
+            type: Boolean,
+            default: null
+        },
+        utility: {
+            type: Number,
+            default: null
+        },
+        bedrooms: {
+            type: Number,
+            default: null
+        },
+        bathrooms: {
+            type: Number,
+            default: null
+        },
+        separateWc: {
+            type: Number,
+            default: null
+        },
+        basement: {
+            type: Number,
+            default: null
+        },
+        garage: {
+            type: Number,
+            default: null
+        },
+        parking: {
+            type: Number,
+            default: null
+        },
+        gardens: {
+            type: Boolean,
+            default: null
+        },
+        isPrivate: {
+            type: Boolean,
+            default: null
+        },
+        isCommunal: {
+            type: Boolean,
+            default: null
+        },
+        numberOfOutbuildings: {
+            type: Number,
+            default: null
+        },
+        outbuildingDetails: {
+            type: String,
+            default: null
+        },
+        grossFloorAreaOfDwelling: {
+            type: Number,
+            default: null
+        }
+    });
+
+const newBuildSchema = new mongoose.Schema({
+    isNewBuildOrRecentlyConverted: {
+        type: Boolean,
+        default: null
+    },
+    isCompleted: {
+        type: Boolean,
+        default: null
+    },
+    isUnderConstruction: {
+        type: Boolean,
+        default: null
+    },
+    isFinalInspectionRequired: {
+        type: Boolean,
+        default: null
+    },
+    isNhbcCert: {
+        type: Boolean,
+        default: null
+    },
+    isBuildZone: {
+        type: Boolean,
+        default: null
+    },
+    isPremier: {
+        type: Boolean,
+        default: null
+    },
+    isProfessionalConsultant: {
+        type: Boolean,
+        default: null
+    },
+    isOtherCert: {
+        type: Boolean,
+        default: null
+    },
+    otherCertDetails: {
+        type: String,
+        default: null
+    },
+    isSelfBuildProject: {
+        type: Boolean,
+        default: null
+    },
+    isInvolvesPartExchange: {
+        type: Boolean,
+        default: null
+    },
+    isDisclosureOfIncentivesSeen: {
+        type: Boolean,
+        default: null
+    },
+    incentivesDetails: {
+        type: String,
+        default: null
+    },
+    newBuildDeveloperName: {
+        type: String,
+        default: null
+    }
+});
+
+const currentOccupencySchema = new mongoose.Schema({
+    isEverOccupied: {
+        type: Boolean,
+        default: null
+    },
+    numberOfAdultsInProperty: {
+        type: Number,
+        default: null
+    },
+    isHmoOrMultiUnitFreeholdBlock: {
+        type: Boolean,
+        default: null
+    },
+    isCurrentlyTenanted: {
+        type: Boolean,
+        default: null
+    },
+    hmoOrMultiUnitDetails: {
+        type: String,
+        default: null
+    },
+});
+
+const constructionSchema = new mongoose.Schema({
+    
+        isStandardConstruction: {
+            type: Boolean,
+            default: null
+        },
+        nonStandardConstructionType: {
+            type: String,
+            default: null
+        },
+        mainWalls: {
+            type: String,
+            default: null
+        },
+        mainRoof: {
+            type: String,
+            default: null
+        },
+        garageConstruction: {
+            type: String,
+            default: null
+        },
+        outbuildingsConstruction: {
+            type: String,
+            default: null
+        },
+        isHasAlterationsOrExtensions: {
+            type: Boolean,
+            default: null
+        },
+        isAlterationsRequireConsents: {
+            type: Boolean,
+            default: null
+        },
+        alterationsAge: {
+            type: Number,
+            default: null
+        }
+});
+
+const localityAndDemandSchema = new mongoose.Schema({
+    
+        // Location Type - Boolean fields
+        isUrban: {
+            type: Boolean,
+            default: null
+        },
+        isSuburban: {
+            type: Boolean,
+            default: null
+        },
+        isRural: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Market Appeal - Boolean fields
+        isGoodMarketAppeal: {
+            type: Boolean,
+            default: null
+        },
+        isAverageMarketAppeal: {
+            type: Boolean,
+            default: null
+        },
+        isPoorMarketAppeal: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Surrounding Property Types - Boolean fields
+        isOwnerResidential: {
+            type: Boolean,
+            default: null
+        },
+        isResidentialLet: {
+            type: Boolean,
+            default: null
+        },
+        isCommercial: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Property Prices Trend - Boolean fields
+        isPricesRising: {
+            type: Boolean,
+            default: null
+        },
+        isPricesStatic: {
+            type: Boolean,
+            default: null
+        },
+        isPricesFalling: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Demand Trend - Boolean fields
+        isDemandRising: {
+            type: Boolean,
+            default: null
+        },
+        isDemandStatic: {
+            type: Boolean,
+            default: null
+        },
+        isDemandFalling: {
+            type: Boolean,
+            default: null
+        },
+        isAffectedByCompulsoryPurchase: {
+            type: Boolean,
+            default: null
+        },
+        compulsoryPurchaseDetails: {
+            type: String,
+            default: null
+        },
+        isVacantOrBoardedPropertiesNearby: {
+            type: Boolean,
+            default: null
+        },
+        vacantOrBoardedDetails: {
+            type: String,
+            default: null
+        },
+        isOccupancyRestrictionPossible: {
+            type: Boolean,
+            default: null
+        },
+        occupancyRestrictionDetails: {
+            type: String,
+            default: null
+        },
+        isCloseToHighVoltageEquipment: {
+            type: Boolean,
+            default: null
+        },
+        highVoltageEquipmentDetails: {
+            type: String,
+            default: null
+        }
+});
+
+const servicesSchema = new mongoose.Schema({
+        // Water Supply - Boolean fields
+        isMainsWater: {
+            type: Boolean,
+            default: null
+        },
+        isPrivateWater: {
+            type: Boolean,
+            default: null
+        },
+        isUnknownWater: {
+            type: Boolean,
+            default: null
+        },
+        
+        
+        // Gas Supply - Boolean
+        isGasSupply: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Electricity Supply - Boolean
+        isElectricitySupply: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Central Heating - Boolean
+        isCentralHeating: {
+            type: Boolean,
+            default: null
+        },
+        centralHeatingType: {
+            type: String,
+            default: null
+        },
+        
+        // Main Drainage - Boolean
+        isMainDrainage: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Septic Tank/Cesspit/Treatment Plant - Boolean
+        isSepticTankPlant: {
+            type: Boolean,
+            default: null
+        },
+
+        isUnknownDrainage: {
+            type: Boolean,
+            default: null
+        },
+        // Solar Panels - Boolean
+        isSolarPanels: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Shared Access - Boolean
+        isSharedAccess: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Road Adopted - Boolean
+        isRoadAdopted: {
+            type: Boolean,
+            default: null
+        },
+        isHasEasementsOrRightsOfWay: {
+            type: Boolean,
+            default: null
+        },
+        easementsOrRightsDetails: {
+            type: String,
+            default: null
+        },
+        servicesSeparateForFlats: {
+            type: String,
+            default: ""
+        },
+        servicesSeparateDetails: {
+            type: String,
+            default: ""
+        }
+});
+
+const energyEfficiencySchema = new mongoose.Schema({
+    epcRating: {
+        type: String,
+        default: null
+    },
+    epcScore: {
+        type: Number,
+        default: null
+    }
+});
+
+const essentialRepairsSchema = new mongoose.Schema({
+    isEssentialRepairsRequired: {
+        type: Boolean,
+        default: null
+    },
+    essentialRepairsDetails: {
+        type: String,
+        default: null
+    },
+    isReinspectionRequired: {
+        type: Boolean,
+        default: null
+    }
+});
+
+const reportsSchema = new mongoose.Schema({
+    isTimberDamp: {
+        type: Boolean,
+        default: null
+    },
+    isMining: {
+        type: Boolean,
+        default: null
+    },
+    isElectrical: {
+        type: Boolean,
+        default: null
+    },
+    isDrains: {
+        type: Boolean,
+        default: null
+    },
+    isStructuralEngineers: {
+        type: Boolean,
+        default: null
+    },
+    isArboricultural: {
+        type: Boolean,
+        default: null
+    },
+    isMundic: {
+        type: Boolean,
+        default: null
+    },
+    isWallTies: {
+        type: Boolean,
+        default: null
+    },
+    isRoof: {
+        type: Boolean,
+        default: null
+    },
+    isMetalliferous: {
+        type: Boolean,
+        default: null
+    },
+    isSulfateRedAsh: {
+        type: Boolean,
+        default: null
+    },
+    isOtherReport: {
+        type: Boolean,
+        default: null
+    },
+    otherReportDetails: {
+        type: String,
+        default: null
+    }
+});
+
+const propertyProneToSchema = new mongoose.Schema({
+    flooding: {
+        type: Boolean,
+        default: null
+    },
+    subsidence: {
+        type: Boolean,
+        default: null
+    },
+    heave: {
+        type: Boolean,
+        default: null
+    },
+    landslip: {
+        type: Boolean,
+        default: null
+    },
+    details: {
+        type: String,
+        default: null
+    }
+});
+
+const conditionsOfPropertySchema = new mongoose.Schema({
+    isStructuralMovement: {
+        type: Boolean,
+        default: null
+    },
+    isStructuralMovementHistoricOrNonProgressive: {
+        type: Boolean,
+        default: null
+    },
+    structuralMovementDetails: {
+        type: String,
+        default: ""
+    },
+    isStructuralModifications: {
+        type: Boolean,
+        default: null
+    },
+    structuralModificationsDetails: {
+        type: String,
+        default: null
+    },
+    communalAreasMaintained: {
+        type: Boolean,
+        default: null
+    },
+    propertyProneTo: propertyProneToSchema,
+    isPlotBoundariesDefinedUnderPointFourHectares: {
+        type: Boolean,
+        default: null
+    },
+    isTreesWithinInfluencingDistance: {
+        type: Boolean,
+        default: null
+    },
+    treesInfluenceDetails: {
+        type: String,
+        default: null
+    },
+    isBuiltOnSteepSlope: {
+        type: Boolean,
+        default: null
+    },
+    steepSlopeDetails: {
+        type: String,
+        default: null
+    }
+});
+
+const rentalInformationSchema = new mongoose.Schema({
+    isRentalDemandInLocality: {
+        type: Boolean,
+        default: null
+    },
+    rentalDemandDetails: {
+        type: String,
+        default: null
+    },
+    monthlyMarketRentPresentCondition: {
+        type: Number,
+        default: null
+    },
+    monthlyMarketRentImprovedCondition: {
+        type: Number,
+        default: null
+    },
+    isOtherLettingDemandFactors: {
+        type: Boolean,
+        default: null
+    },
+    otherLettingDemandDetails: {
+        type: String,
+        default: null
+    },
+    investorOnlyDemand: {
+        type: Boolean,
+        default: null
+    },
+    investorOnlyDemandDetails: {
+        type: String,
+        default: null
+    }
+});
+
+const valuationForFinancePurposeSchema = new mongoose.Schema({
+    valuationComparativeOnly: {
+        type: String,
+        default: null
+    },
+  isSuitableForFinance: {
+        type: Boolean,
+        default: null
+    },
+  financeSuitabilityDetails: {
+        type: String,
+        default: ""
+    },
+  marketValuePresentCondition: {
+        type: Number,
+        default: null
+    },
+  marketValueAfterRepairs: {
+        type: Number,
+        default: null
+    },
+  purchasePriceOrBorrowerEstimate: {
+        type: Number,
+        default: null
+    },
+  buildingInsuranceReinstatementCost: {
+        type: Number,
+        default: null
+    },
+  isInsurancePremiumLoadingRisk: {
+        type: Boolean,
+        default: null
+    },
+  insurancePremiumLoadingDetails: {
+        type: String,
+        default: null
+    }
+      
+});
+
+const valuerQualificationsSchema = new mongoose.Schema({
+    mrics: {
+        type: Boolean,
+        default: null
+    },
+    frics: {
+        type: Boolean,
+        default: null
+    },
+    assocRics: {
+        type: Boolean,
+        default: null
+    }
+});
+
+const valuersDeclarationSchema = new mongoose.Schema({
+   valuerSignature: {
+        type: String,
+        default: null
+    },
+  valuerName: {
+        type: String,
+        default: null
+    },
+  onBehalfOf: {
+        type: String,
+        default: null
+    },
+  telephone: {
+        type: Number,
+        default: null
+    },
+  fax: {
+        type: Number,
+        default: null
+    },
+  email: {
+        type: String,
+        default: null
+    },
+  valuerQualifications: valuerQualificationsSchema,
+  ricsNumber: {
+        type: Number,
+        default: null
+    },
+  valuerAddress: {
+        type: String,
+        default: null
+    },
+  valuerPostcode: {
+        type: String,
+        default: null
+    },
+  reportDate: {
+        type: Date,
+        default: null
+    }
+});
+
+const valuationReportSchema = new mongoose.Schema({
+    applicationId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Application",
+        required: true
+    },
+    documentId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Document",
+        required: true
+    },
+    applicationType: { type: String,default: ""},
+    applicationNumber: {type: String,default: ""},
+    applicantName: {type: String,default: ""},
+    dateOfInspection: {type: Date,default: null},
+    propertyAddress: {type: String,default: ""},
+    postCode: {type: String,default: ""},
+    propertyType : propertyTypeSchema,
+    accommodation : accommodationSchema,
+    currentOccupency: currentOccupencySchema,  //wrong 
+    newBuild : newBuildSchema,
+    construction: constructionSchema,
+    localityAndDemand: localityAndDemandSchema,
+    services: servicesSchema, 
+    conditionsOfProperty: conditionsOfPropertySchema,
+    reports: reportsSchema,
+    energyEfficiency: energyEfficiencySchema,
+    essentialRepairs : essentialRepairsSchema,
+    rentalInformation: rentalInformationSchema,
+    valuationForFinancePurpose: valuationForFinancePurposeSchema,
+    valuationForFinancePurposeHPP:valuationForFinancePurposeSchema,
+    generalRemarks: { type: String, default: ""},
+    valuersDeclaration: valuersDeclarationSchema,
+    extractedText: { type: String, default: "" },
+    createdAt: { type: Date, default: Date.now },
+    updatedAt: { type: Date, default: Date.now }
+});
+
+
+const ApplicationValuationReportModel = mongoose.model("ApplicationValuationReport", valuationReportSchema);
+export default ApplicationValuationReportModel;import mongoose from "mongoose";
+
+const propertyTypeSchema = new mongoose.Schema({
+        isDetachedHouse: {
+            type: Boolean,
+            default: null
+        },
+        isSemiDetachedHouse: {
+            type: Boolean,
+            default: null
+        },
+        isTerracedHouse: {
+            type: Boolean,
+            default: null
+        },
+        isBungalow: {
+            type: Boolean,
+            default: null
+        },
+        isFlat: {
+            type: Boolean,
+            default: null
+        },
+        isMaisonette: {
+            type: Boolean,
+            default: null
+        },
+        flatMaisonetteFloor: {
+            type: Number,
+            default: null
+        },
+        numberOfFloorsInBlock: {
+            type: Number,
+            default: null
+        },
+        isBuiltOrOwnedByLocalAuthority: {
+            type: Boolean,
+            default: null
+        },
+        ownerOccupationPercentage: {
+            type: Number,
+            default: null
+        },
+        isFlatMaisonetteConverted: {
+            type: Boolean,
+            default: null
+        },
+        conversionYear: {
+            type: Number,
+            default: null
+        },
+        isPurposeBuilt: {
+            type: Boolean,
+            default: null
+        },
+        numberOfUnitsInBlock: {
+            type: Number,
+            default: null
+        },
+        isAboveCommercial: {
+            type: Boolean,
+            default: null
+        },
+        residentialNatureImpact: {
+            type: String,
+            default: null
+        },
+        tenure: {
+            type: String,
+            default: null
+        },
+        isFlyingFreehold: {
+            type: Boolean,
+            default: null
+        },
+        flyingFreeholdPercentage: {
+            type: Number,
+            default: null
+        },
+        maintenanceCharge: {
+            type: Number,
+            default: null
+        },
+        roadCharges: {
+            type: Number,
+            default: null
+        },
+        groundRent: {
+            type: Number,
+            default: null
+        },
+        remainingLeaseTermYears: {
+            type: Number,
+            default: null
+        },
+        isPartCommercialUse: {
+            type: Boolean,
+            default: null
+        },
+        commercialUsePercentage: {
+            type: Number,
+            default: null
+        },
+        isPurchasedUnderSharedOwnership: {
+            type: Boolean,
+            default: null
+        },
+        yearBuilt: {
+            type: Number,
+            default: null
+        }
+    });
+    const accommodationSchema = new mongoose.Schema({
+        hall: {
+            type: Number,
+            default: null
+        },
+        livingRooms: {
+            type: Number,
+            default: null
+        },
+        kitchen: {
+            type: Number,
+            default: null
+        },
+        isLiftPresent: {
+            type: Boolean,
+            default: null
+        },
+        utility: {
+            type: Number,
+            default: null
+        },
+        bedrooms: {
+            type: Number,
+            default: null
+        },
+        bathrooms: {
+            type: Number,
+            default: null
+        },
+        separateWc: {
+            type: Number,
+            default: null
+        },
+        basement: {
+            type: Number,
+            default: null
+        },
+        garage: {
+            type: Number,
+            default: null
+        },
+        parking: {
+            type: Number,
+            default: null
+        },
+        gardens: {
+            type: Boolean,
+            default: null
+        },
+        isPrivate: {
+            type: Boolean,
+            default: null
+        },
+        isCommunal: {
+            type: Boolean,
+            default: null
+        },
+        numberOfOutbuildings: {
+            type: Number,
+            default: null
+        },
+        outbuildingDetails: {
+            type: String,
+            default: null
+        },
+        grossFloorAreaOfDwelling: {
+            type: Number,
+            default: null
+        }
+    });
+
+const newBuildSchema = new mongoose.Schema({
+    isNewBuildOrRecentlyConverted: {
+        type: Boolean,
+        default: null
+    },
+    isCompleted: {
+        type: Boolean,
+        default: null
+    },
+    isUnderConstruction: {
+        type: Boolean,
+        default: null
+    },
+    isFinalInspectionRequired: {
+        type: Boolean,
+        default: null
+    },
+    isNhbcCert: {
+        type: Boolean,
+        default: null
+    },
+    isBuildZone: {
+        type: Boolean,
+        default: null
+    },
+    isPremier: {
+        type: Boolean,
+        default: null
+    },
+    isProfessionalConsultant: {
+        type: Boolean,
+        default: null
+    },
+    isOtherCert: {
+        type: Boolean,
+        default: null
+    },
+    otherCertDetails: {
+        type: String,
+        default: null
+    },
+    isSelfBuildProject: {
+        type: Boolean,
+        default: null
+    },
+    isInvolvesPartExchange: {
+        type: Boolean,
+        default: null
+    },
+    isDisclosureOfIncentivesSeen: {
+        type: Boolean,
+        default: null
+    },
+    incentivesDetails: {
+        type: String,
+        default: null
+    },
+    newBuildDeveloperName: {
+        type: String,
+        default: null
+    }
+});
+
+const currentOccupencySchema = new mongoose.Schema({
+    isEverOccupied: {
+        type: Boolean,
+        default: null
+    },
+    numberOfAdultsInProperty: {
+        type: Number,
+        default: null
+    },
+    isHmoOrMultiUnitFreeholdBlock: {
+        type: Boolean,
+        default: null
+    },
+    isCurrentlyTenanted: {
+        type: Boolean,
+        default: null
+    },
+    hmoOrMultiUnitDetails: {
+        type: String,
+        default: null
+    },
+});
+
+const constructionSchema = new mongoose.Schema({
+    
+        isStandardConstruction: {
+            type: Boolean,
+            default: null
+        },
+        nonStandardConstructionType: {
+            type: String,
+            default: null
+        },
+        mainWalls: {
+            type: String,
+            default: null
+        },
+        mainRoof: {
+            type: String,
+            default: null
+        },
+        garageConstruction: {
+            type: String,
+            default: null
+        },
+        outbuildingsConstruction: {
+            type: String,
+            default: null
+        },
+        isHasAlterationsOrExtensions: {
+            type: Boolean,
+            default: null
+        },
+        isAlterationsRequireConsents: {
+            type: Boolean,
+            default: null
+        },
+        alterationsAge: {
+            type: Number,
+            default: null
+        }
+});
+
+const localityAndDemandSchema = new mongoose.Schema({
+    
+        // Location Type - Boolean fields
+        isUrban: {
+            type: Boolean,
+            default: null
+        },
+        isSuburban: {
+            type: Boolean,
+            default: null
+        },
+        isRural: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Market Appeal - Boolean fields
+        isGoodMarketAppeal: {
+            type: Boolean,
+            default: null
+        },
+        isAverageMarketAppeal: {
+            type: Boolean,
+            default: null
+        },
+        isPoorMarketAppeal: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Surrounding Property Types - Boolean fields
+        isOwnerResidential: {
+            type: Boolean,
+            default: null
+        },
+        isResidentialLet: {
+            type: Boolean,
+            default: null
+        },
+        isCommercial: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Property Prices Trend - Boolean fields
+        isPricesRising: {
+            type: Boolean,
+            default: null
+        },
+        isPricesStatic: {
+            type: Boolean,
+            default: null
+        },
+        isPricesFalling: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Demand Trend - Boolean fields
+        isDemandRising: {
+            type: Boolean,
+            default: null
+        },
+        isDemandStatic: {
+            type: Boolean,
+            default: null
+        },
+        isDemandFalling: {
+            type: Boolean,
+            default: null
+        },
+        isAffectedByCompulsoryPurchase: {
+            type: Boolean,
+            default: null
+        },
+        compulsoryPurchaseDetails: {
+            type: String,
+            default: null
+        },
+        isVacantOrBoardedPropertiesNearby: {
+            type: Boolean,
+            default: null
+        },
+        vacantOrBoardedDetails: {
+            type: String,
+            default: null
+        },
+        isOccupancyRestrictionPossible: {
+            type: Boolean,
+            default: null
+        },
+        occupancyRestrictionDetails: {
+            type: String,
+            default: null
+        },
+        isCloseToHighVoltageEquipment: {
+            type: Boolean,
+            default: null
+        },
+        highVoltageEquipmentDetails: {
+            type: String,
+            default: null
+        }
+});
+
+const servicesSchema = new mongoose.Schema({
+        // Water Supply - Boolean fields
+        isMainsWater: {
+            type: Boolean,
+            default: null
+        },
+        isPrivateWater: {
+            type: Boolean,
+            default: null
+        },
+        isUnknownWater: {
+            type: Boolean,
+            default: null
+        },
+        
+        
+        // Gas Supply - Boolean
+        isGasSupply: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Electricity Supply - Boolean
+        isElectricitySupply: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Central Heating - Boolean
+        isCentralHeating: {
+            type: Boolean,
+            default: null
+        },
+        centralHeatingType: {
+            type: String,
+            default: null
+        },
+        
+        // Main Drainage - Boolean
+        isMainDrainage: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Septic Tank/Cesspit/Treatment Plant - Boolean
+        isSepticTankPlant: {
+            type: Boolean,
+            default: null
+        },
+
+        isUnknownDrainage: {
+            type: Boolean,
+            default: null
+        },
+        // Solar Panels - Boolean
+        isSolarPanels: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Shared Access - Boolean
+        isSharedAccess: {
+            type: Boolean,
+            default: null
+        },
+        
+        // Road Adopted - Boolean
+        isRoadAdopted: {
+            type: Boolean,
+            default: null
+        },
+        isHasEasementsOrRightsOfWay: {
+            type: Boolean,
+            default: null
+        },
+        easementsOrRightsDetails: {
+            type: String,
+            default: null
+        },
+        servicesSeparateForFlats: {
+            type: String,
+            default: ""
+        },
+        servicesSeparateDetails: {
+            type: String,
+            default: ""
+        }
+});
+
+const energyEfficiencySchema = new mongoose.Schema({
+    epcRating: {
+        type: String,
+        default: null
+    },
+    epcScore: {
+        type: Number,
+        default: null
+    }
+});
+
+const essentialRepairsSchema = new mongoose.Schema({
+    isEssentialRepairsRequired: {
+        type: Boolean,
+        default: null
+    },
+    essentialRepairsDetails: {
+        type: String,
+        default: null
+    },
+    isReinspectionRequired: {
+        type: Boolean,
+        default: null
+    }
+});
+
+const reportsSchema = new mongoose.Schema({
+    isTimberDamp: {
+        type: Boolean,
+        default: null
+    },
+    isMining: {
+        type: Boolean,
+        default: null
+    },
+    isElectrical: {
+        type: Boolean,
+        default: null
+    },
+    isDrains: {
+        type: Boolean,
+        default: null
+    },
+    isStructuralEngineers: {
+        type: Boolean,
+        default: null
+    },
+    isArboricultural: {
+        type: Boolean,
+        default: null
+    },
+    isMundic: {
+        type: Boolean,
+        default: null
+    },
+    isWallTies: {
+        type: Boolean,
+        default: null
+    },
+    isRoof: {
+        type: Boolean,
+        default: null
+    },
+    isMetalliferous: {
+        type: Boolean,
+        default: null
+    },
+    isSulfateRedAsh: {
+        type: Boolean,
+        default: null
+    },
+    isOtherReport: {
+        type: Boolean,
+        default: null
+    },
+    otherReportDetails: {
+        type: String,
+        default: null
+    }
+});
+
+const propertyProneToSchema = new mongoose.Schema({
+    flooding: {
+        type: Boolean,
+        default: null
+    },
+    subsidence: {
+        type: Boolean,
+        default: null
+    },
+    heave: {
+        type: Boolean,
+        default: null
+    },
+    landslip: {
+        type: Boolean,
+        default: null
+    },
+    details: {
+        type: String,
+        default: null
+    }
+});
+
+const conditionsOfPropertySchema = new mongoose.Schema({
+    isStructuralMovement: {
+        type: Boolean,
+        default: null
+    },
+    isStructuralMovementHistoricOrNonProgressive: {
+        type: Boolean,
+        default: null
+    },
+    structuralMovementDetails: {
+        type: String,
+        default: ""
+    },
+    isStructuralModifications: {
+        type: Boolean,
+        default: null
+    },
+    structuralModificationsDetails: {
+        type: String,
+        default: null
+    },
+    communalAreasMaintained: {
+        type: Boolean,
+        default: null
+    },
+    propertyProneTo: propertyProneToSchema,
+    isPlotBoundariesDefinedUnderPointFourHectares: {
+        type: Boolean,
+        default: null
+    },
+    isTreesWithinInfluencingDistance: {
+        type: Boolean,
+        default: null
+    },
+    treesInfluenceDetails: {
+        type: String,
+        default: null
+    },
+    isBuiltOnSteepSlope: {
+        type: Boolean,
+        default: null
+    },
+    steepSlopeDetails: {
+        type: String,
+        default: null
+    }
+});
+
+const rentalInformationSchema = new mongoose.Schema({
+    isRentalDemandInLocality: {
+        type: Boolean,
+        default: null
+    },
+    rentalDemandDetails: {
+        type: String,
+        default: null
+    },
+    monthlyMarketRentPresentCondition: {
+        type: Number,
+        default: null
+    },
+    monthlyMarketRentImprovedCondition: {
+        type: Number,
+        default: null
+    },
+    isOtherLettingDemandFactors: {
+        type: Boolean,
+        default: null
+    },
+    otherLettingDemandDetails: {
+        type: String,
+        default: null
+    },
+    investorOnlyDemand: {
+        type: Boolean,
+        default: null
+    },
+    investorOnlyDemandDetails: {
+        type: String,
+        default: null
+    }
+});
+
+const valuationForFinancePurposeSchema = new mongoose.Schema({
+    valuationComparativeOnly: {
+        type: String,
+        default: null
+    },
+  isSuitableForFinance: {
+        type: Boolean,
+        default: null
+    },
+  financeSuitabilityDetails: {
+        type: String,
+        default: ""
+    },
+  marketValuePresentCondition: {
+        type: Number,
+        default: null
+    },
+  marketValueAfterRepairs: {
+        type: Number,
+        default: null
+    },
+  purchasePriceOrBorrowerEstimate: {
+        type: Number,
+        default: null
+    },
+  buildingInsuranceReinstatementCost: {
+        type: Number,
+        default: null
+    },
+  isInsurancePremiumLoadingRisk: {
+        type: Boolean,
+        default: null
+    },
+  insurancePremiumLoadingDetails: {
+        type: String,
+        default: null
+    }
+      
+});
+
+const valuerQualificationsSchema = new mongoose.Schema({
+    mrics: {
+        type: Boolean,
+        default: null
+    },
+    frics: {
+        type: Boolean,
+        default: null
+    },
+    assocRics: {
+        type: Boolean,
+        default: null
+    }
+});
+
+const valuersDeclarationSchema = new mongoose.Schema({
+   valuerSignature: {
+        type: String,
+        default: null
+    },
+  valuerName: {
+        type: String,
+        default: null
+    },
+  onBehalfOf: {
+        type: String,
+        default: null
+    },
+  telephone: {
+        type: Number,
+        default: null
+    },
+  fax: {
+        type: Number,
+        default: null
+    },
+  email: {
+        type: String,
+        default: null
+    },
+  valuerQualifications: valuerQualificationsSchema,
+  ricsNumber: {
+        type: Number,
+        default: null
+    },
+  valuerAddress: {
+        type: String,
+        default: null
+    },
+  valuerPostcode: {
+        type: String,
+        default: null
+    },
+  reportDate: {
+        type: Date,
+        default: null
+    }
+});
+
+const valuationReportSchema = new mongoose.Schema({
+    applicationId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Application",
+        required: true
+    },
+    documentId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Document",
+        required: true
+    },
+    applicationType: { type: String,default: ""},
+    applicationNumber: {type: String,default: ""},
+    applicantName: {type: String,default: ""},
+    dateOfInspection: {type: Date,default: null},
+    propertyAddress: {type: String,default: ""},
+    postCode: {type: String,default: ""},
+    propertyType : propertyTypeSchema,
+    accommodation : accommodationSchema,
+    currentOccupency: currentOccupencySchema,  //wrong 
+    newBuild : newBuildSchema,
+    construction: constructionSchema,
+    localityAndDemand: localityAndDemandSchema,
+    services: servicesSchema, 
+    conditionsOfProperty: conditionsOfPropertySchema,
+    reports: reportsSchema,
+    energyEfficiency: energyEfficiencySchema,
+    essentialRepairs : essentialRepairsSchema,
+    rentalInformation: rentalInformationSchema,
+    valuationForFinancePurpose: valuationForFinancePurposeSchema,
+    valuationForFinancePurposeHPP:valuationForFinancePurposeSchema,
+    generalRemarks: { type: String, default: ""},
+    valuersDeclaration: valuersDeclarationSchema,
+    extractedText: { type: String, default: "" },
+    createdAt: { type: Date, default: Date.now },
+    updatedAt: { type: Date, default: Date.now }
+});
+
+
+const ApplicationValuationReportModel = mongoose.model("ApplicationValuationReport", valuationReportSchema);
+export default ApplicationValuationReportModel;
