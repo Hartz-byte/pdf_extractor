@@ -2,6 +2,8 @@
 
 def get_valuation_report_schema():
     return {
+        "applicationId": None,
+        "documentId": None,
         "applicationType": "",
         "applicationNumber": "",
         "applicantName": "",
